@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_wikucourse_coursecategory,access.wikucourse.coursecategory,model_wikucourse_coursecategory,,1,1,1,1
+access_wikucourse_levelcategory,access.wikucourse.levelcategory,model_wikucourse_levelcategory,,1,1,1,1
+access_wikucourse_pemrograman,access.wikucourse.pemrograman,model_wikucourse_pemrograman,,1,1,1,1
+access_wikucourse_bahasa,access.wikucourse.bahasa,model_wikucourse_bahasa,,1,1,1,1

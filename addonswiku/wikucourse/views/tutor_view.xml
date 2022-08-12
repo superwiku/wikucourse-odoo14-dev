@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="wikucourse_tutor_view_form_inherit" model="ir.ui.view">
+        <field name="name">wikucourse_tutor_view_form_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='vat']" position="after">
+                <!-- Add your fields or attributes here -->
+                <field name="is_tutor"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="wikucorse_tutor_search_inherit" model="ir.ui.view">
+       <field name="name">wikucorse_tutor_search_inherit</field>
+       <field name="model">res.partner</field>
+       <field name="inherit_id" ref="base.view_res_partner_filter"/>
+       <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <filter string="Tutor" name="tutornya" domain="[('is_tutor','=',True)]"/>
+            </field>
+       </field>
+    </record>
+    <record id="wikucourse_tutor_action" model="ir.actions.act_window">
+        <field name="name">Tutor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{
+                'search_default_tutornya':1,
+                'default_is_tutor':True,
+            }
+        </field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="wikucourse_tutor_menu_action"
+              name="Tutor"
+              parent="wikucourse_penyelenggara_categ"
+              action="wikucourse_tutor_action"
+              sequence="10"/>
+</odoo>

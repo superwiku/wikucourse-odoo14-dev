@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<odoo>
+   <!-- This Menu Item must have a parent and an action -->
+   <record id="wikucourse_coursecategory_view_tree" model="ir.ui.view">
+       <field name="name">Python</field>
+       <field name="model">wikucourse.pemrograman</field>
+       <field name="arch" type="xml">
+           <tree string="_tree">
+               <field name="name"/>
+               <field name="level_belajar"/>
+               <field name="biaya"/>
+               <field name="kapasitas_kelas"/>
+               <field name="sisa_kapasitas"/>
+               <field name="startup"/>
+           </tree>
+       </field>
+   </record>
+
+    <record id="wikucourse_coursecategory_view_form" model="ir.ui.view">
+       <field name="name">Python</field>
+       <field name="model">wikucourse.pemrograman</field>
+       <field name="arch" type="xml">
+           <form string="wikucourse_coursecategory_form">
+               <sheet>
+                   <group>
+                       <field name="name"/>
+                       <field name="level_belajar"/>
+                       <field name="kapasitas_kelas"/>
+                       <field name="startup"/>
+                   </group>
+               </sheet>
+           </form>
+       </field>
+   </record>
+    
+   <record id="wikucourse_coursecategory_search_view" model="ir.ui.view">
+      <field name="name">wikucourse_coursecategory_view_form</field>
+      <field name="model">wikucourse.pemrograman</field>
+       <field name="arch" type="xml">
+           <search string="Cari berdasarkan..">
+                <field name="name"/>
+                <field name="sisa_kapasitas"/>
+           </search>
+      </field>
+   </record>
+
+
+   <record id="wikucourse_coursecategory_action" model="ir.actions.act_window">
+       <field name="name">Pemrograman Python</field>
+       <field name="type">ir.actions.act_window</field>
+       <field name="res_model">wikucourse.pemrograman</field>
+       <field name="view_mode">tree,form</field>
+   </record>
+
+   <menuitem id="wikucourse_coursecategory_menu_action"
+             name="Pemrograman"
+             parent="wikucourse_kursus_categ"
+             action="wikucourse_coursecategory_action"
+             sequence="10"/>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<odoo>
+    <record id="wikucourse_levelcategory_view_tree" model="ir.ui.view">
+        <field name="name">Level Kursus</field>
+        <field name="model">wikucourse.levelcategory</field>
+        <field name="arch" type="xml">
+            <tree string="Level">
+                <field name="name"/>
+                <field name="keterangan"/>
+                <field name="biaya"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record id="wikucourse_levelcategory_view_form" model="ir.ui.view">
+        <field name="name">Level Kursus</field>
+        <field name="model">wikucourse.levelcategory</field>
+        <field name="arch" type="xml">
+            <form string="wikucourse_levelcategory_form">
+                <sheet>
+                    <group>
+                        <field name="name"/>                        
+                    </group>
+                    <group>
+                        <field name="keterangan"/>
+                        <field name="biaya"/>
+                        <field name="course_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="wikucourse_levelcategory_action" model="ir.actions.act_window">
+        <field name="name">Level</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wikucourse.levelcategory</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="wikucourse_levelcategory_menu_action" 
+              name="Level" 
+              parent="wikucourse_root"
+              action="wikucourse_levelcategory_action" 
+              sequence="20"/>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="wikucourse_peserta_form_view_inherit" model="ir.ui.view">
+        <field name="name">wikucourse_peserta_form_view_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="is_peserta"/>
+                <!-- Add your fields or attributes here -->
+            </xpath>
+        </field>
+    </record>
+
+    <record id="wikucorse_peserta_search_inherit" model="ir.ui.view">
+       <field name="name">wikucorse_peserta_search_inherit</field>
+       <field name="model">res.partner</field>
+       <field name="inherit_id" ref="base.view_res_partner_filter"/>
+       <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <filter string="Peserta" name="pesertanya" domain="[('is_peserta','=',True)]"/>
+            </field>
+       </field>
+    </record>
+
+    <record id="wikucourse_peserta_action" model="ir.actions.act_window">
+        <field name="name">Peserta Kursus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{
+                'search_default_pesertanya':1,
+                'default_is_peserta':True,
+            }
+        </field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="wikucourse_peserta_menu_action" 
+              name="Peserta Kursus" 
+              parent="wikucourse_root" 
+              action="wikucourse_peserta_action" 
+              sequence="10"/>
+</odoo>

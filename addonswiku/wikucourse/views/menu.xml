@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="wikucourse_root"
+              name="Wiku Course"
+              sequence="10"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="wikucourse_kursus_categ"
+              name="Kursus"
+              parent="wikucourse_root"
+              sequence="10"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="wikucourse_level_categ"
+              name="Level Kursus"
+              parent="wikucourse_root"
+              sequence="20"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="wikucourse_penyelenggara_categ"
+              name="Penyelenggara"
+              parent="wikucourse_root"
+              sequence="30"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="wikucourse_pesertadidik_categ"
+              name="Peserta Didik"
+              parent="wikucourse_root"
+              sequence="40"/>
+</odoo>
