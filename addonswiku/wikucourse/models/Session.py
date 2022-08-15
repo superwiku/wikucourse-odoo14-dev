@@ -19,3 +19,5 @@ class SessionPemrograman(models.Model):
         inverse_name='kursus',
         string='Peserta',
         required=False)
+
+
