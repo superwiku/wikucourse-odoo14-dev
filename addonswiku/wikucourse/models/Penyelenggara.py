@@ -11,3 +11,4 @@ class Penyelenggara(models.Model):
     is_admin = fields.Boolean(
         string='Admin',
         required=False)
+
