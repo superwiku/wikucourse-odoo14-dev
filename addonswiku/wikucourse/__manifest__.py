@@ -34,6 +34,7 @@
         'views/bahasacategory_view.xml',
         'views/tutor_view.xml',
         'views/peserta_view.xml',
+        'views/session_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

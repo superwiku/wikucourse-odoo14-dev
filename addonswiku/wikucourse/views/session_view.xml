@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wikucourse_sessionpemrograman_view_tree" model="ir.ui.view">
+        <field name="name">wikucourse_sessionpemrograman_view_tree</field>
+        <field name="model">wikucourse.sessionpemrograman</field>
+        <field name="arch" type="xml">
+            <tree string="wikucourse_sessionpemrograman_tree">
+                <field name="nama_kursus"/>
+                <field name="tgl_mulai"/>
+                <field name="peserta_ids"/>
+            </tree>
+        </field>
+    </record>
+    <record id="wikucourse_sessionpemrograman_view_form" model="ir.ui.view">
+        <field name="name">wikucourse_sessionpemrograman_view_form</field>
+        <field name="model">wikucourse.sessionpemrograman</field>
+        <field name="arch" type="xml">
+            <form string="wikucourse_sessionpemrograman_form">
+                <sheet>
+                    <group>
+                        <field name="nama_kursus"/>
+                        <field name="tgl_mulai"/>
+                        <field name="peserta_ids"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="wikucourse_sessionpemrograman_action" model="ir.actions.act_window">
+        <field name="name">wikucourse session pemrograman</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wikucourse.sessionpemrograman</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="wikucourse_sessionpemrograman_menu_action" 
+              name="Session Pemrograman" 
+              parent="wikucourse_session" 
+              action="wikucourse_sessionpemrograman_action" 
+              sequence="10"/>
+</odoo>

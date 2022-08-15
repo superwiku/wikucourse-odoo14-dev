@@ -10,4 +10,8 @@ class PesertaDidik(models.Model):
     is_peserta = fields.Boolean(
         string='Peserta',
         required=False)
+    kursus = fields.Many2one(
+        comodel_name='wikucourse.sessionpemrograman',
+        string='Kursus',
+        required=False)
 

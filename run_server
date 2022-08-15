@@ -1,0 +1,2 @@
+
+./odoo-bin --addons-path=/home/superwiku/Documents/odoo14x/addonswiku,/home/superwiku/Documents/odoo14x/addons -d warungku --db_port 5432 --xmlrpc-port=8070  --limit-memory-hard 0 --limit-time-real=10000 -u wikucourse
