@@ -6,11 +6,12 @@
        <field name="model">wikucourse.pemrograman</field>
        <field name="arch" type="xml">
            <tree string="_tree">
-               <!--<field name="name"/>-->
+               <field name="name"/>
                <field name="level_belajar"/>
                <field name="biaya"/>
                <field name="kapasitas_kelas"/>
-               <field name="sisa_kapasitas"/>
+               <field name="jml_siswa_prog"/>
+               <field name="kapasitas_sisa"/>
                <field name="startup"/>
            </tree>
        </field>
@@ -39,7 +40,7 @@
        <field name="arch" type="xml">
            <search string="Cari berdasarkan..">
                 <field name="name"/>
-                <field name="sisa_kapasitas"/>
+                <field name="kapasitas_sisa"/>
            </search>
       </field>
    </record>

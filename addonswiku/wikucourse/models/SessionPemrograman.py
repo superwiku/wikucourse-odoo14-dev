@@ -36,8 +36,14 @@ class SessionPemrograman(models.Model):
             a = self.env['wikucourse.pesertapemrograman'].search([('session_id', '=', record.id)]).mapped('display_name')
             b = len(a)
             record.jml_siswa = b
-            print(b)
+            record.nama_kursus.jml_siswa_prog = b
 
+    # @api.model
+    # def create(self, vals_list):
+    #     record = super(SessionPemrograman, self).create(vals_list)
+    #     if record.jml_siswa:
+    #         self.env['wikucourse.pemrograman'].search([('id', '=', record.nama_kursus.id)]).write({record.nama_kursus.jml_siswa_prog = record.jml_siswa})
+    #         return record
 
 class PesertaPemrograman(models.Model):
     _name = 'wikucourse.pesertapemrograman'
