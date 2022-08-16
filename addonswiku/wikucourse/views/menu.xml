@@ -20,8 +20,8 @@
               parent="wikucourse_root"
               sequence="30"/>
     <!-- This Menu Item Must have a parent -->
-    <menuitem id="wikucourse_pesertadidik_categ"
-              name="Peserta Didik"
+    <menuitem id="wikucourse_session"
+              name="Session"
               parent="wikucourse_root"
               sequence="40"/>
 </odoo>

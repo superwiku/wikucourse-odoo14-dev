@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+        <record id="report_surat_jalan_form" model="ir.ui.view">
+            <field name="name">surat.jalan.report.form</field>
+            <field name="model">surat.jalan.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="is_invoice" string="Ter Invoice"/>
+                                <field name="is_not_invoice"/>
+                                <field name="is_both"/>
+                            </group>
+                            <group>
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="type"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button string="Export" class="btn btn-primary" name="export" type="object"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="surat_jalan_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Generate Report Surat Jalan</field>
+            <field name="res_model">surat.jalan.report.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+<!--        <menuitem name="Report Surat Jalan"-->
+<!--                  id="report_surat_jalan_menu"-->
+<!--                  parent="asm_report_penjualan_menu"-->
+<!--                  action="surat_jalan_report_wizard_action"-->
+        />
+
+    </data>
+
+
+</odoo>

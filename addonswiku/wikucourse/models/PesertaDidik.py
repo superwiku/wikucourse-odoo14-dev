@@ -11,3 +11,4 @@ class PesertaDidik(models.Model):
         string='Peserta',
         required=False)
 
+

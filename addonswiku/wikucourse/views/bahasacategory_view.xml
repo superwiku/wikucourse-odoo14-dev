@@ -9,7 +9,7 @@
                <field name="level_belajar"/>
                <field name="biaya"/>
                <field name="kapasitas_kelas"/>
-               <field name="sisa_kapasitas"/>
+               <field name="kapasitas_sisa"/>
                <field name="negara_pendamping"/>
 
            </tree>
@@ -27,7 +27,7 @@
                        <field name="level_belajar"/>
                        <field name="biaya"/>
                        <field name="kapasitas_kelas"/>
-                       <field name="sisa_kapasitas"/>
+                       <field name="kapasitas_sisa"/>
                        <field name="negara_pendamping"/>
                    </group>
                </sheet>

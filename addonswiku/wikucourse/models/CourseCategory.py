@@ -9,10 +9,7 @@ class CourseCategory(models.Model):
     kapasitas_kelas = fields.Integer(
         string='Kapasitas Kelas',
         required=True)
-    sisa_kapasitas = fields.Integer(compute='_compute_sisa',
-                                    string='Sisa Kapasitas',
-                                    required=False,
-                                    store=True)
+
     level_belajar = fields.Many2one(
         comodel_name='wikucourse.levelcategory',
         string='Level Belajar',
@@ -27,11 +24,6 @@ class CourseCategory(models.Model):
         for a in self:
             a.biaya = a.level_belajar.biaya
 
-    @api.depends('kapasitas_kelas')
-    def _compute_sisa(self):
-        for i in self:
-            i.sisa_kapasitas = i.kapasitas_kelas
-
 
 class Pemrograman(models.Model):
     _inherit = 'wikucourse.coursecategory'
@@ -40,6 +32,17 @@ class Pemrograman(models.Model):
     startup = fields.Char(
         string='Startup',
         required=False)
+    jml_siswa_prog = fields.Integer(
+        string='Jml_siswa_prog',
+        required=False)
+    kapasitas_sisa = fields.Integer(compute='_compute_sisa',
+                                    string='Sisa Kapasitas',
+                                    required=False)
+
+    @api.depends('jml_siswa_prog')
+    def _compute_sisa(self):
+        for record in self:
+            record.kapasitas_sisa = record.kapasitas_kelas - record.jml_siswa_prog
 
 
 class Bahasa(models.Model):
@@ -49,3 +52,10 @@ class Bahasa(models.Model):
     negara_pendamping = fields.Char(
         string='Negara Pendamping',
         required=False)
+    jml_siswa_bahasa = fields.Integer(
+        string='Jml_siswa_prog',
+        required=False)
+    kapasitas_sisa = fields.Integer(string='Sisa Kapasitas',
+                                    required=False)
+
+
