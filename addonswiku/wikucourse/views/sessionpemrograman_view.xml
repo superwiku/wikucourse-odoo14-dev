@@ -10,6 +10,7 @@
                 <field name="nama_tutor"/>
                 <field name="jml_siswa"/>
                 <field name="tgl_mulai"/>
+                <field name="siswanya"/>
             </tree>
         </field>
     </record>

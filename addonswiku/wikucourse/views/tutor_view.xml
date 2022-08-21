@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="wikucourse_tutor_view_tree_inherit" model="ir.ui.view">
+        <field name="name">wikucourse_tutor_view_tree_inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='display_name']" position="after">
+                <!-- Add new fields here -->
+                <field name="function"/>
+            </xpath>
+            
+        </field>
+    </record>
 
     <!-- Inherit Form View to Modify it -->
     <record id="wikucourse_tutor_view_form_inherit" model="ir.ui.view">
