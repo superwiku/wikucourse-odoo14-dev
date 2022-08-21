@@ -33,7 +33,7 @@ class Pemrograman(models.Model):
         string='Startup',
         required=False)
     jml_siswa_prog = fields.Integer(
-        string='Jml_siswa_prog',
+        string='Jml Siswa Pemrograman',
         required=False)
     kapasitas_sisa = fields.Integer(compute='_compute_sisa',
                                     string='Sisa Kapasitas',

@@ -27,7 +27,6 @@
                        <field name="level_belajar"/>
                        <field name="biaya"/>
                        <field name="kapasitas_kelas"/>
-                       <field name="kapasitas_sisa"/>
                        <field name="negara_pendamping"/>
                    </group>
                </sheet>
