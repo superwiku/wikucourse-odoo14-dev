@@ -23,8 +23,8 @@
            <xpath expr="//form//sheet//group" position="after">
                 <sheet>
                     <group name="name" string="Tambahan"> 
-                        <field name="jml_siswa_bahasa"/>
-                        <field name="kapasitas_sisa"/>
+                        <field name="jml_siswa_bahasa" readonly="1"/>
+                        <field name="kapasitas_sisa" readonly="1"/>
                         <field name="negara_pendamping"/>
                     </group>
                 </sheet>

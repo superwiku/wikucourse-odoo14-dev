@@ -23,21 +23,12 @@
                        <field name="name"/>
                        <field name="level_belajar"/>
                        <field name="kapasitas_kelas"/>
+                       <field name="biaya"/>
                    </group>
                </sheet>
            </form>
        </field>
    </record>
     
-   <!-- <record id="wikucourse_coursecategory_search_view" model="ir.ui.view">
-      <field name="name">wikucourse_coursecategory_view_form</field>
-      <field name="model">wikucourse.coursecategory</field>
-       <field name="arch" type="xml">
-           <search string="Cari berdasarkan..">
-                <field name="name"/>
-                <field name="kapasitas_sisa"/>
-           </search>
-      </field>
-   </record>    -->
    
 </odoo>
