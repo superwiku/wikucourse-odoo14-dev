@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <odoo>
     <record id="wikucourse_peserta_tree_view_inherit" model="ir.ui.view">
         <field name="name">wikucourse_peserta_tree_view_inherit</field>
@@ -23,11 +23,9 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="is_peserta"/>
-                <!-- Add your fields or attributes here -->
             </xpath>
             <xpath expr="//field[@name='is_peserta']" position="after">
                 <field name="jenis_kursus"/>
-                <!-- Add your fields or attributes here -->
             </xpath>
 
         </field>

@@ -1,31 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <odoo>
     <record id="wikucourse_tutor_view_tree_inherit" model="ir.ui.view">
         <field name="name">wikucourse_tutor_view_tree_inherit</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_tree"/>
-        <field name="arch" type="xml">
+        <field name="inherit_id" ref="wikucourse_peserta_tree_view_inherit"/>
+        <!-- <field name="arch" type="xml">
             
             <xpath expr="//field[@name='display_name']" position="after">
-                <!-- Add new fields here -->
                 <field name="function"/>
             </xpath>
             
-        </field>
+        </field> -->
     </record>
 
     <!-- Inherit Form View to Modify it -->
     <record id="wikucourse_tutor_view_form_inherit" model="ir.ui.view">
         <field name="name">wikucourse_tutor_view_form_inherit</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
-        <field name="arch" type="xml">
+        <field name="inherit_id" ref="wikucourse_peserta_form_view_inherit"/>
+        <!-- <field name="arch" type="xml">
+            
             <xpath expr="//field[@name='vat']" position="after">
-                <!-- Add your fields or attributes here -->
                 <field name="is_tutor"/>
             </xpath>
 
-        </field>
+        </field> -->
     </record>
 
     <record id="wikucorse_tutor_search_inherit" model="ir.ui.view">

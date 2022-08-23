@@ -41,7 +41,7 @@ class SessionPemrograman(models.Model):
             b = len(a)
             record.jml_siswa = b
             record.nama_kursus.jml_siswa_prog = b
-            record.siswanya = a
+            record.siswanya = a[0]
 
 
 class PesertaPemrograman(models.Model):

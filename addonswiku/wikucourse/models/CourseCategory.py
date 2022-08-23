@@ -53,7 +53,7 @@ class Bahasa(models.Model):
         string='Negara Pendamping',
         required=False)
     jml_siswa_bahasa = fields.Integer(
-        string='Jml_siswa_prog',
+        string='Jml Siswa Bahasa',
         required=False)
     kapasitas_sisa = fields.Integer(string='Sisa Kapasitas',
                                     required=False)
