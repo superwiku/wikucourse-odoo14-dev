@@ -3,11 +3,10 @@
     <record id="wikucourse_peserta_tree_view_inherit" model="ir.ui.view">
         <field name="name">wikucourse_peserta_tree_view_inherit</field>
         <field name="model">res.partner</field>
+        <field name="mode">primary</field>
         <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='function']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
+            
             <xpath expr="//field[@name='display_name']" position="after">
                 <field name="jenis_kursus"/>
                 <!-- Add new fields here -->
@@ -19,6 +18,7 @@
     <record id="wikucourse_peserta_form_view_inherit" model="ir.ui.view">
         <field name="name">wikucourse_peserta_form_view_inherit</field>
         <field name="model">res.partner</field>
+        <field name="mode">primary</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='vat']" position="after">

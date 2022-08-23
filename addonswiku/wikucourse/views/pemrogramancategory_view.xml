@@ -2,44 +2,42 @@
 <odoo>   
     <record id="wikucourse_pemrograman_view_tree" model="ir.ui.view">
         <field name="name">wikucourse.pemrograman.view.tree</field>
-        <field name="model">wikucourse.pemrograman</field>        
+        <field name="model">wikucourse.pemrograman</field>     
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="wikucourse_coursecategory_view_tree"/>
         <field name="arch" type="xml">
-           <tree string="wikucourse_pemrogramancourse_tree">
-               <field name="name"/>
-               <field name="level_belajar"/>
-               <field name="biaya"/>
-               <field name="kapasitas_kelas"/>
-               <field name="kapasitas_sisa"/>
-               <field name="startup"/>
-           </tree>
-       </field>
+            <xpath expr="//field[@name='biaya']" position="after">
+                <field name="jml_siswa_prog"/>
+                <field name="kapasitas_sisa"/>
+                <field name="startup"/>
+            </xpath>
+        </field>  
     </record>
     
     <record id="wikucourse_pemrograman_view_form" model="ir.ui.view">
         <field name="name">wikucourse.pemrograman.inherit.view.form</field>
         <field name="model">wikucourse.pemrograman</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="wikucourse_coursecategory_view_form"/>
         <field name="arch" type="xml">
-           <form string="wikucourse_pemrogramancourse_form">
-               <sheet>
-                   <group>
-                       <field name="name"/>
-                       <field name="level_belajar"/>
-                       <field name="biaya"/>
-                       <field name="kapasitas_kelas"/>
-                       <field name="startup"/>
-                   </group>
-               </sheet>
-           </form>
-       </field>
+            <xpath expr="//form//sheet//group[2]" position="after">
+                    <group name="name" string="Khusus Pemrograman">
+                        <field name="jml_siswa_prog" readonly="1"/>
+                        <field name="kapasitas_sisa" readonly="1"/>
+                        <field name="startup"/>
+                    </group>
+            </xpath>
+        </field> 
     </record>
+
     <!-- wikucourse.pemrograman action window -->
     <record id="wikucourse_pemrograman_action" model="ir.actions.act_window">
         <field name="name">Kursus Pemrograman</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wikucourse.pemrograman</field>
-        <field name="view_mode">tree,form</field>            
-       
+        <field name="view_mode">tree,form</field> 
     </record>
+
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="wikucourse_pemrogramancategory_menu_act" 
         name="Pemrograman" 

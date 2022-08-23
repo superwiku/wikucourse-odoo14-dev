@@ -19,12 +19,14 @@
        <field name="arch" type="xml">
            <form string="wikucourse_coursecategory_form">
                <sheet>
-                   <group>
+                    <group name="name" string="Nama Kursus">
                        <field name="name"/>
+                    </group>
+                    <group name="name" string="Detail Kursus">
                        <field name="level_belajar"/>
                        <field name="kapasitas_kelas"/>
                        <field name="biaya"/>
-                   </group>
+                    </group>                    
                </sheet>
            </form>
        </field>

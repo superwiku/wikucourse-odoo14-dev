@@ -4,13 +4,13 @@
         <field name="name">wikucourse_tutor_view_tree_inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="wikucourse_peserta_tree_view_inherit"/>
-        <!-- <field name="arch" type="xml">
+        <field name="arch" type="xml">
             
-            <xpath expr="//field[@name='display_name']" position="after">
-                <field name="function"/>
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">0</attribute>
             </xpath>
             
-        </field> -->
+        </field>
     </record>
 
     <!-- Inherit Form View to Modify it -->
